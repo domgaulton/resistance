@@ -1,0 +1,17 @@
+.countdown-start-stop {
+  margin: 10px 0;
+
+
+  &--disabled {
+    color: $colour-grey-light;
+  }
+
+  button {
+    border: none;
+    background: none;
+  }
+
+  .material-icons {
+    font-size: 10em;
+  }
+}

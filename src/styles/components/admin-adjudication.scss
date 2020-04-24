@@ -1,0 +1,30 @@
+.admin-adjudication {
+  position: fixed;
+  left: 0;
+  background: #ffffffc2;
+  bottom: $navigation-height;
+  z-index: 100;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding: 9px 0;
+
+  &__button {
+    background: white;
+    border: 1px solid $colour-grey-light;
+    width: 45%;
+    display: inline-block;
+    padding: 21px 0px;
+
+    label {
+
+      .material-icons {
+        font-size: 3em;
+      }
+    }
+
+    input {
+      display: none;
+    }
+  }
+}

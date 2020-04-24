@@ -1,0 +1,30 @@
+// .countdown-wrapper {
+//   display: flex;
+//   border: 1px solid grey;
+//   position: absolute;
+//   left: 0;
+//   top: 0;
+//   right: 0;
+//   bottom: 0;
+//   height: calc(100vh - 83px); // $navigation-height
+//   box-sizing: border-box;
+//   opacity: 0.5;
+//   pointer-events: none;
+//   // transform: rotate(180deg);
+//   width: 100px;
+
+//   &__countdown{
+//     background: red;
+//     width: 100%;
+//     -webkit-transition: width 0.5s; /* Safari prior 6.1 */
+//     transition: width 0.5s;
+//     margin: 0 auto;
+//     display: block;
+//   }
+// }
+
+.countdown-timer {
+  @import url('https://fonts.googleapis.com/css?family=Orbitron&display=swap');
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.5em;
+}

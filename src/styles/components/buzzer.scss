@@ -1,0 +1,31 @@
+.buzzer {
+  position: fixed;
+  bottom: $navigation-height + 10px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  button {
+    @import url('https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap');
+    background-color: red;
+    border: none;
+    color: white;
+    padding: 24px 48px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 2em;
+    font-family: 'Permanent Marker', cursive;
+    border-radius: 48px;
+    box-shadow: 0px 3px 3px black;
+
+
+    &:active {
+      box-shadow: unset;
+      transform: translateY(5px);
+    }
+
+    &:disabled{
+      background: $colour-grey-light;
+    }
+  }
+}
