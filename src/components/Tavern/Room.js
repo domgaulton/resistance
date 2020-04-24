@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { ContextUserConsumer } from "../../context/ContextFirebaseUserProvider";
 import { ContextTavernConsumer } from "../../context/ContextFirebaseTavernProvider";
-import TavernCountdown from './TavernCountdown';
 import UserList from './UserList';
 import Buzzer from './Buzzer';
 import Toggle from './Toggle';
@@ -16,6 +15,7 @@ class Tavern extends Component {
       tavernName: '',
       adminUser: false,
       membersReady: false,
+      membersCount: 0,
       buzzedIn: '',
       countdownActive: false,
       timePercentLeft: 100,
@@ -31,11 +31,13 @@ class Tavern extends Component {
 
   componentDidUpdate(prevProps, prevState) {
     if (this.props.tavernData.members && this.props.tavernData.members !== prevProps.tavernData.members) {
+      console.log(this.props.tavernData.members.length)
       const membersReady = this.props.tavernData.members.every(item => {
         return item.isReady === true;
       })
       this.setState({
-        membersReady
+        membersReady,
+        membersCount: this.props.tavernData.members.length
       })
     }
 
@@ -123,18 +125,12 @@ class Tavern extends Component {
               disabled={!this.state.membersReady}
               onClick={this.toggleCountdown}
             >
-              <i className="material-icons">{this.props.tavernData.countdownActive ? 'stop' : 'timer'}</i>
+              <i className="material-icons">{this.state.membersCount > 5 ? 'lock' : 'lock_open'}</i>
             </button>
           </div>
         ) : (
           null // Later we might put the buzzer here as admin can't play
         )}
-
-        <TavernCountdown
-          countdownActive={this.state.countdownActive}
-          countdownTime={this.props.tavernData.countdown}
-          paused={this.state.buzzedIn !== ''}
-        />
 
         <UserList />
 

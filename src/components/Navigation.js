@@ -16,8 +16,8 @@ class Navigation extends Component {
           </li>
           <li>
             <Link className="bz-navigation__item" to={`/tavern/`}>
-              <i className="material-icons">house</i>
-              <span>Taverns</span>
+              <i className="material-icons">videogame_asset</i>
+              <span>Bunkers</span>
             </Link>
           </li>
           <li>

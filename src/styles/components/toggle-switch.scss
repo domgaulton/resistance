@@ -4,6 +4,11 @@
   bottom: $navigation-height + 130px;
   height: 34px;
   width: 62px;
+
+  p {
+    position: absolute;
+    margin-top: -40px;
+  }
 }
 
 .slider {

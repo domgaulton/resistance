@@ -26,7 +26,6 @@ class UserListItem extends Component {
         key={this.props.userData.id}
       >
         <span>{this.state.name}</span>
-        <span>({this.props.score})</span>
       </li>
     );
   }

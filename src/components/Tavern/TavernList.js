@@ -14,7 +14,7 @@ class TavernList extends Component {
         </ul>
       </React.Fragment>
     ) : (
-      <p>Join or create a tavern below</p>
+      <p>Join or create a bunkers below</p>
     );
   }
 }

@@ -5,7 +5,7 @@ class Buzzer extends Component {
   render(){
     return (
       <div className="buzzer">
-        <button onClick={this.props.handleBuzzer} disabled={this.props.buzzerDisabled}>Buzzin'!</button>
+        <button onClick={this.props.handleBuzzer} disabled={this.props.buzzerDisabled}>Start</button>
       </div>
     );
   }

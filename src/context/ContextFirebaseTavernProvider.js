@@ -7,7 +7,7 @@ import { withRouter } from "react-router";
 const Context = React.createContext();
 export const ContextTavernConsumer = Context.Consumer;
 
-const tavernsCollection = process.env.REACT_APP_FIREBASE_TAVERNS_COLLECTION;
+const tavernsCollection = process.env.REACT_APP_FIREBASE_BUNKER_COLLECTION;
 const usersCollection = process.env.REACT_APP_FIREBASE_USERS_COLLECTION;
 
 class FirebaseTavernProvider extends Component {
@@ -86,6 +86,8 @@ class FirebaseTavernProvider extends Component {
           pin: pin,
           countdown: 30,
           countdownActive: false,
+          round: 0,
+          rounds: [],
           admin: userId,
           buzzedIn: '',
         })
@@ -97,10 +99,10 @@ class FirebaseTavernProvider extends Component {
         .catch(error => {
           this.props.addMessage(error);
         });
-        this.props.addMessage("Tavern added");
+        this.props.addMessage("Bunker added");
         this.props.history.push("/tavern")
       } else {
-        this.props.addMessage("Tavern name already exists, please pick another");
+        this.props.addMessage("Bunker name already exists, please pick another");
       }
     })
   }
@@ -120,7 +122,7 @@ class FirebaseTavernProvider extends Component {
             this.props.addMessage("You've been added!");
             this.props.history.push("/tavern")
           } else {
-            this.props.addMessage("You're already in this tavern!");
+            this.props.addMessage("You're already in this bunker!");
             return
           }
         });
@@ -223,7 +225,7 @@ class FirebaseTavernProvider extends Component {
       }
 
       tavernDoc.delete().then(() => {
-        this.props.addMessage('Tavern Deleted');
+        this.props.addMessage('Bunker Deleted');
         this.props.history.push("/tavern")
       }).catch(error => {
         this.props.addMessage(error);
